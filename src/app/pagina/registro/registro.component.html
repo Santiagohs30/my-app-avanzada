@@ -99,3 +99,56 @@
                     </select>
                   </div>
                   
+
+                  <div class="card">
+                    <div class="card-header ps-5 pt-4 pb-4">
+                    <h5 class="mb-0" ><i class="fa-solid fa-user-plus me-3"></i>Registro de un nuevo
+                    paciente</h5>
+                    </div>
+                    <div class="card-body p-5">
+                    <form #f="ngForm" (ngSubmit)="registrar()">
+                    <!-- Todo lo que va dentro del form -->
+                    </form>
+                    </div>
+                    </div>
+
+                    <div class="mb-3 row">
+                      <label class="col-sm-2 col-form-label">Cédula: </label>
+                      <div class="col-sm-10">
+                      <input #cedula="ngModel"
+                      [ngClass]="cedula.invalid && (cedula.dirty || cedula.touched) ? 'is-invalid' : ''" type="text"
+                      name="cedula" class="form-control" required [(ngModel)]="registroPacienteDTO.cedula" />
+                      </div>
+                      </div>
+                      <div class="mb-3 row">
+                      <label class="col-sm-2 col-form-label">Nombre: </label>
+                      <div class="col-sm-10">
+                      <input #nombre="ngModel"
+                      [ngClass]="nombre.invalid && (nombre.dirty || nombre.touched) ? 'is-invalid' : ''" type="text"
+                      name="nombre" class="form-control" required [(ngModel)]="registroPacienteDTO.nombre" />
+                      </div>
+                      </div>
+
+                      <div class="mb-3 row">
+                        <label class="col-sm-2 col-form-label">Foto: </label>
+                        <div class="col-sm-10">
+                        <input type="file" name="urlFoto" class="form-control" required
+                        (change)="onFileChange($event)" />
+                        </div>
+                        </div>
+
+                        <div class="mb-3 row">
+                          <label class="col-sm-2 col-form-label">Ciudad: </label>
+                          <div class="col-sm-10">
+                          <select name="ciudad" required class="form-select"
+                          [(ngModel)]="registroPacienteDTO.ciudades">
+                          <option value="" selected>Seleccione una ciudad</option>
+                          <option [value]="item" *ngFor="let item of ciudades; index as i">{{item}}</option>
+                          </select>
+                          </div>
+                          </div>
+                          <div class="alert alert-danger" role="alert" *ngIf="!sonIguales()">Las contraseñas no
+                            coinciden</div>
+                            <button class="btn btn-primary" type="submit" [disabled]="f.invalid || !sonIguales()">
+                            <i class="fa-solid fa-circle-plus me-1"></i>Registrarse
+                          </button>
