@@ -9,6 +9,7 @@ import { LoginComponent } from './pagina/login/login.component';
 import { RegistroComponent } from './pagina/registro/registro.component';
 import { AlertaComponent } from './pagina/alerta/alerta.component';
 import { GestionPqrsComponent } from './pagina/gestion-pqrs/gestion-pqrs.component';
+import { HistorialComponent } from './pagina/historial/historial.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { GestionPqrsComponent } from './pagina/gestion-pqrs/gestion-pqrs.compone
     LoginComponent,
     RegistroComponent,
     AlertaComponent,
-    GestionPqrsComponent
+    GestionPqrsComponent,
+    HistorialComponent
   ],
   imports: [
     BrowserModule,

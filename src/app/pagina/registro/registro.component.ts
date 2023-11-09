@@ -8,7 +8,7 @@ import { ImagenService } from 'src/app/servicios/imagen.service';
 @Component({
   selector: 'app-registro',
   templateUrl: './registro.component.html',
-  styleUrls: ['./registro.component.css']
+  styleUrls: ['./registro.component.css'] 
 })
 export class RegistroComponent {
   alerta!: Alerta;

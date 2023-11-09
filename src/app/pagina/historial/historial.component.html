@@ -1,0 +1,27 @@
+<!-- historial-medico.component.html -->
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <div class="card">
+        <div class="card-header bg-primary text-white">
+          Historial Médico
+        </div>
+        <div class="card-body">
+          <ul class="list-group">
+            <li *ngFor="let atencion of historial" class="list-group-item">
+              <div class="row">
+                <div class="col-md-3">
+                  <img *ngIf="atencion.imagen" [src]="atencion.imagen" class="img-fluid" alt="Imagen del paciente">
+                </div>
+                <div class="col-md-9">
+                  <h5 class="mb-1">{{ atencion.fecha }}</h5>
+                  <p class="mb-1">{{ atencion.diagnostico }}</p>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
