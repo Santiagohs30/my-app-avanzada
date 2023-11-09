@@ -9,6 +9,7 @@ import { Component } from '@angular/core';
 export class LoginComponent {
   alerta!: { mensaje: any; tipo: string; };
   tokenService: any;
+  authService: any;
 
   public login(){
     this.authService.login(this.loginDTO).subscribe({
